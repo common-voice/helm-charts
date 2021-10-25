@@ -1,0 +1,64 @@
+apiVersion: v1
+entries:
+  mozilla-common-voice:
+  - apiVersion: v2
+    created: "2021-10-25T22:14:25.307303504Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.4.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.7.4
+    description: Deploy Common Voice web application
+    digest: 35573d15ada4c7548e94acb7606a5460d8ba3d0935103995bfeaee259e9aee3e
+    home: https://voice.mozilla.org
+    icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - deepspeech
+    maintainers:
+    - email: jenc@mozillafoundation.org
+      name: jzinner
+    - email: jenny@mozillafoundation.org
+      name: JZ
+    name: mozilla-common-voice
+    sources:
+    - https://github.com/common-voice/common-voice
+    type: application
+    urls:
+    - https://github.com/common-voice/helm-charts/releases/download/mozilla-common-voice-1.0.1/mozilla-common-voice-1.0.1.tgz
+    version: 1.0.1
+  sentence-collector:
+  - apiVersion: v2
+    created: "2021-10-25T22:14:25.44116136Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.4.2
+    description: Deploy Common Voice's Sentence Collector
+    digest: 69e44de640ba7764a0b70931eee217320669069648f507a56856798a1c4c4eac
+    home: https://commonvoice.mozilla.org/sentence-collector
+    keywords:
+    - Mozilla
+    - common-voice
+    - voice
+    - sentence-collector
+    maintainers:
+    - email: jenc@mozillafoundation.org
+      name: jzinner
+    - email: jenny@mozillafoundation.org
+      name: JZ
+    name: sentence-collector
+    sources:
+    - https://github.com/Common-Voice/sentence-collector
+    type: application
+    urls:
+    - https://github.com/common-voice/helm-charts/releases/download/sentence-collector-1.0.1/sentence-collector-1.0.1.tgz
+    version: 1.0.1
+generated: "2021-10-25T22:14:25.44117436Z"

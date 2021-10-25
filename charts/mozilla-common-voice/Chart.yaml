@@ -1,8 +1,8 @@
 apiVersion: v2
 name: mozilla-common-voice
 icon: https://voice.mozilla.org/dist/f01895c77138837851f87c2e40acbd58.svg
-version: 0.4.5
-description: Deploy Mozilla Common Voice web application
+version: 1.0.2
+description: Deploy Common Voice web application
 type: application
 keywords:
   - Mozilla
@@ -11,16 +11,17 @@ keywords:
   - deepspeech
 home: https://voice.mozilla.org
 sources:
-  - https://github.com/mozilla/voice-web
+  - https://github.com/common-voice/common-voice
 maintainers:
-  - name: Web SRE Team
-    email: it-sre@mozilla.com
-dependencies:
+  - name: jzinner
+    email: jenc@mozillafoundation.org
+  - name: JZ
+    email: jenny@mozillafoundation.org
+dependencies:  # used only in CI testing
 - name: mysql
   version: 8.4.2
   condition: mysql.enabled
   repository: https://charts.bitnami.com/bitnami
-
 - name: redis
   version: 12.7.4
   condition: redis.enabled

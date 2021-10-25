@@ -1,9 +1,8 @@
 name: Release Charts
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
+    # branches:
+    #   - main
 
 jobs:
   release:
@@ -16,13 +15,20 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "voice-automation"
+          git config user.email "voice-automation@users.noreply.github.com"
 
       - name: Install Helm
         uses: azure/setup-helm@v1
         with:
           version: v3.4.0
+
+      # https://github.com/helm/chart-releaser/issues/114
+      - name: Add Helm Repos for Dependencies
+        run: |
+          helm repo add elastic https://helm.elastic.co
+          helm repo add jetstack https://charts.jetstack.io
+          helm repo add bitnami https://charts.bitnami.com/bitnami
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1

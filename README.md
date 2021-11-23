@@ -1,27 +1,10 @@
 # helm-charts
 
-[![Build Status](https://travis-ci.com/mozilla-it/helm-charts.svg?branch=main)](https://travis-ci.com/mozilla-it/helm-charts)
-
-This repository contains a collection of Helm charts curated by Mozilla's Service Engineering team
-
-## Adding more charts
-
-## Compiling and publishing charts
-
-## Referencing images in ECR
-Charts referencing Docker Images stored in an ECR repo under `itsre-apps` subaccount can't be pulled without credentials.   
-Travis is configured to get Pull credentials for repositories inside that account.  
-In order to instruct the testing suite to
-use those credentials you have to create a folder named `ci` inside your chart, a file `test-values.yaml` inside it with the next content:
-```
-imagePullSecrets:
-  - name: ecr-registry
-```
-Check [here](https://github.com/mozilla-it/helm-charts/pull/39/commits/1a0fbfed5810a6d6875ca0172adac5065ee03b74#diff-245000fef8fab28267cb8040d6a3d7f6) for an example.
+This repository contains a collection of Helm charts used in the Common Voice project.
 
 ## Installing Helm Charts from this repository
 This repository is serving Helm Charts using the webserver provided by Github pages. In order to install Helm charts in your cluster
-add this repository to your helm repository list running `helm repo add mozilla-helm-charts https://mozilla-it.github.io/helm-charts/`
+add this repository to your helm repository list running `helm repo add cv-helm-charts https://common-voice.github.io/helm-charts/`
 
 ## Debug a Chart deployment
 This section describes how to verify that your chart is installed correctly as well as what to do if it is not.
@@ -53,7 +36,7 @@ The same information found out above can be found in the logs of the 2 component
 Running `kubectl logs -l=app=flux -n fluxcd` you will get the logs of Flux where we can make sure that it correctly detected the change in the Chart and will try to apply it.
 ```
 kubectl logs -l=app=flux -n fluxcd
-ts=2020-04-17T09:24:41.796293402Z caller=loop.go:133 component=sync-loop event=refreshed url=ssh://git@github.com/mozilla-it/voice-infra branch=main HEAD=26626653ecca80f3d43f6e42aa3376af15755622
+ts=2020-04-17T09:24:41.796293402Z caller=loop.go:133 component=sync-loop event=refreshed url=ssh://git@github.com/common-voice/voice-infra branch=main HEAD=26626653ecca80f3d43f6e42aa3376af15755622
 ```
 Nothing wrong here, moving on and checking helm-operator logs
 

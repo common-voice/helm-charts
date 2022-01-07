@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.com/mozilla-it/helm-charts.svg?branch=main)](https://travis-ci.com/mozilla-it/helm-charts)
 
 This repository contains a collection of Helm charts used by Common Voice.
+This README was orignially setup to support Mozilla's Mozilla’s Service Engineering team (references to mozilla-it or itsre are obsolete).
 
 ## Adding more charts
 

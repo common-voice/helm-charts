@@ -33,7 +33,7 @@ spec:
         livenessProbe:
           httpGet:
             port: 9000
-            path: /api/v1/metrics
+            path: /api/v1/golem
           periodSeconds: 10
           initialDelaySeconds: 60
           successThreshold: 1
